@@ -1,5 +1,6 @@
 import express from 'express'
 import bodyParser from "body-parser";
+import usuarioRouter from './routes/usuario.router.js';
 
 const app = express();
 const PORT = 3000;
@@ -13,10 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //routes
 
-app.get('/', (req, res) => {
-    res.send('¡Hola, esta es tu API!');
-});
-
+app.use(usuarioRouter);
 
 //start server
 
