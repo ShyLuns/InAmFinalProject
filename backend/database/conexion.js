@@ -1,4 +1,4 @@
-import {createPool} from 'mysql2/promise';
+import { createPool } from 'mysql2/promise';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -13,4 +13,16 @@ export const pool = createPool(
         port: process.env.DB_PORT,
         database: process.env.DB_DATABASE
     }
-  );
+);
+
+// Manejar errores durante la creación del pool
+pool.getConnection()
+    .then(connection => {
+        console.log('Conectado al pool de MySQL');
+        connection.release(); // Liberar la conexión después de la prueba exitosa
+    })
+    .catch(error => {
+        console.error('Error al conectar al pool de MySQL:', error);
+    });
+
+export default pool;
