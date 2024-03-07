@@ -193,4 +193,3 @@ export const cambiarEstadoUsuario = async (req, res) => {
         res.status(500).json({ mensaje: 'Error al cambiar el estado del usuario' });
     }
 };
-
