@@ -1,0 +1,70 @@
+* Esta ruta es para registrar un usuarios.
+
+http://localhost:3000/usuarios/registrar
+
+* json POST
+
+    {
+      "nombre": "nombre",
+      "identificacion": identificacion,
+      "telefono": "telefono",
+      "correo": "correo",
+      "contraseña": "contraseña",
+      "tipo_usuario": "tipo_usuario",
+      "estado_usuario": "estado_usuario"
+    }
+
+
+* Esta ruta es para listar todos los usuarios. (GET)
+
+http://localhost:3000/usuarios/listar
+
+
+* Esta ruta es para actualizar un usuario por id.
+
+http://localhost:3000/usuarios/actualizar/:id
+
+* json (PUT)
+
+    {
+      "nombre": "nombre",
+      "identificacion": identificacion,
+      "telefono": "telefono",
+      "correo": "correo",
+      "contraseña": "contraseña",
+      "tipo_usuario": "tipo_usuario",
+      "estado_usuario": "estado_usuario"
+    }
+
+
+* Esta ruta es para buscar un usuario en especifico (GET)
+
+http://localhost:3000/usuarios/buscar/:id
+
+
+* Esta ruta es para eliminar un usuario en especifico (DELETE)
+
+http://localhost:3000/usuarios/eliminar/:id
+
+
+* Esta ruta es para validar las credenciales del login 
+
+http://localhost:3000/usuarios/validar
+
+* json POST
+
+    {
+        "identificacion": 1111111111, 
+        "contraseña": "123"
+    }
+
+
+* Esta ruta es para cambiar el estado del usuario (activo, inactivo)
+
+    http://localhost:3000/usuarios/cambiar-estado/1111111111
+
+* json (PUT)
+
+    {
+        "nuevoEstado": "inactivo"
+    }
