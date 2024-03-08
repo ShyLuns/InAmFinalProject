@@ -1,0 +1,48 @@
+* Esta ruta es para registrar un prestamos
+
+http://localhost:3000/prestamos/registrar
+
+* json (POST)
+
+    {
+        "nombre_ambiente": "Sala de Conferencias",
+        "fecha_prestamo": "2024-03-10",
+        "fecha_entrega": "2024-03-15",
+        "nombre_celador": "Juan Celador",
+        "observaciones": "Reunión de equipo",
+        "fk_usuario": 2,
+        "fk_ambiente": 1
+    }
+
+
+* Esta ruta es para listar un prestamo (GET)
+
+http://localhost:3000/prestamos/listar
+
+
+* Esta ruta es para actualizar un prestamo
+
+http://localhost:3000/prestamos/actualizar/:id
+
+* json (PUT)
+
+    {
+        "nombre_ambiente": "Sala de Conferencias",
+        "fecha_prestamo": "2024-03-10",
+        "fecha_entrega": "2024-03-15",
+        "nombre_celador": "Juan Celador",
+        "observaciones": "Reunión de equipo",
+        "fk_usuario": 2,
+        "fk_ambiente": 1
+    }
+
+
+* Esta ruta es para eliminar un prestamo (DELETE)
+
+http://localhost:3000/prestamos/eliminar
+
+
+* Esta ruta es para buscar un prestamo (GET)
+
+http://localhost:3000/prestamos/buscar/:id
+
