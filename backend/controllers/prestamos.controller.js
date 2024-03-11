@@ -5,10 +5,15 @@ import { pool } from "../database/conexion.js";
 export const listarPrestamo = async (req, res) => {
     try {
         const [result] = await pool.query('SELECT * FROM prestamo');
-        res.status(200).json(result);
+        res.status(200).json({
+            mensaje: 'Préstamos listados con éxito',
+            prestamos: result
+        });
     } catch (error) {
         console.error('Error al listar préstamos:', error);
-        res.status(500).json({ mensaje: 'Error al obtener la lista de préstamos' });
+        res.status(500).json({
+            mensaje: 'Error al obtener la lista de préstamos'
+        });
     }
 };
 
@@ -44,13 +49,18 @@ export const registrarPrestamos = async (req, res) => {
         ]);
 
         if (result.affectedRows > 0) {
-            return res.status(200).json({ message: 'Se registró con éxito el préstamo' });
+            const [nuevoPrestamo] = await pool.query('SELECT * FROM prestamo WHERE id_prestamo = ?', [id_prestamo]);
+
+            return res.status(200).json({
+                mensaje: 'Préstamo registrado con éxito',
+                prestamo: nuevoPrestamo[0]
+            });
         } else {
-            return res.status(403).json({ message: 'Préstamo no registrado' });
+            return res.status(403).json({ mensaje: 'Error al registrar préstamo' });
         }
     } catch (error) {
         console.error('Error al registrar préstamo:', error);
-        return res.status(500).json({ message: 'Error al registrar préstamo' });
+        return res.status(500).json({ mensaje: 'Error al registrar préstamo' });
     }
 };
 
@@ -92,13 +102,19 @@ export const actualizarPrestamos = async (req, res) => {
         ]);
 
         if (result.affectedRows > 0) {
-            return res.status(200).json({ message: 'Préstamo actualizado con éxito' });
+            // Obtener los datos actualizados del préstamo
+            const [prestamoActualizado] = await pool.query('SELECT * FROM prestamo WHERE id_prestamo = ?', [id]);
+
+            return res.status(200).json({
+                mensaje: 'Préstamo actualizado con éxito',
+                prestamo: prestamoActualizado[0]
+            });
         } else {
-            return res.status(403).json({ message: 'Préstamo no actualizado' });
+            return res.status(403).json({ mensaje: 'Préstamo no actualizado' });
         }
     } catch (error) {
         console.error('Error al actualizar préstamo:', error);
-        return res.status(500).json({ message: 'Error al actualizar préstamo' });
+        return res.status(500).json({ mensaje: 'Error al actualizar préstamo' });
     }
 };
 
@@ -108,17 +124,23 @@ export const eliminarPrestamos = async (req, res) => {
     try {
         const id = req.params.id;
 
+        const [prestamo] = await pool.query('SELECT * FROM prestamo WHERE id_prestamo = ?', [id]);
+
+        if (prestamo.length === 0) {
+            return res.status(404).json({ mensaje: 'Préstamo no encontrado' });
+        }
+
         const sql = 'DELETE FROM prestamo WHERE id_prestamo = ?';
         const [result] = await pool.query(sql, [id]);
 
         if (result.affectedRows > 0) {
-            return res.status(200).json({ message: 'Préstamo eliminado con éxito' });
+            return res.status(200).json({ mensaje: `Préstamo eliminado con éxito: ${id}` });
         } else {
-            return res.status(403).json({ message: 'Préstamo no eliminado' });
+            return res.status(403).json({ mensaje: 'Préstamo no eliminado' });
         }
     } catch (error) {
         console.error('Error al eliminar préstamo:', error);
-        return res.status(500).json({ message: 'Error al eliminar préstamo' });
+        return res.status(500).json({ mensaje: 'Error al eliminar préstamo' });
     }
 };
 
@@ -127,17 +149,25 @@ export const eliminarPrestamos = async (req, res) => {
 export const consultarPrestamos = async (req, res) => {
     try {
         const id = req.params.id;
+        const [prestamo] = await pool.query('SELECT * FROM prestamo WHERE id_prestamo = ?', [id]);
+
+        if (prestamo.length === 0) {
+            return res.status(404).json({ mensaje: 'Préstamo no encontrado' });
+        }
 
         const sql = 'SELECT * FROM prestamo WHERE id_prestamo = ?';
         const [rows] = await pool.query(sql, [id]);
 
         if (rows.length > 0) {
-            return res.status(200).json(rows);
+            return res.status(200).json({
+                mensaje: 'Préstamo consultado con éxito',
+                prestamo: rows[0]
+            });
         } else {
-            return res.status(404).json({ message: 'Préstamo no encontrado' });
+            return res.status(404).json({ mensaje: 'Préstamo no encontrado' });
         }
     } catch (error) {
         console.error('Error al consultar préstamo:', error);
-        return res.status(500).json({ message: 'Error al consultar préstamo' });
+        return res.status(500).json({ mensaje: 'Error al consultar préstamo' });
     }
 };
