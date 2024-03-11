@@ -1,0 +1,47 @@
+* Esta ruta es para registrar un elemento
+
+http://localhost:3000/elementos/registrar
+
+* json (POST)
+
+    {
+        "codigo_sena": "123",
+        "estado": "En reparación",
+        "nombre_elemento": "Computadora",
+        "tipo_elemento": "tecnologia",
+        "nota_cambio": "Se realizó una actualización de hardware",
+        "cambios": "si",
+        "fk_ambiente": 1 
+    }
+
+
+* Esta ruta es para listar un elemento (GET)
+
+http://localhost:3000/elementos/listar
+
+
+* Esta ruta es para actualizar un elemento
+
+http://localhost:3000/elementos/actualizar/:id
+
+* json (PUT)
+
+    {
+        "codigo_sena": "123",
+        "estado": "En reparación",
+        "nombre_elemento": "Computadora",
+        "tipo_elemento": "tecnologia",
+        "nota_cambio": "Se realizó una actualización de hardware",
+        "cambios": "si",
+        "fk_ambiente": 1 
+    }
+
+
+* Esta ruta es para eliminar un ambiente (DELETE)
+
+http://localhost:3000/elementos/eliminar/:id
+
+
+* Esta ruta es para buscar un ambiente (GET)
+
+http://localhost:3000/elementos/buscar/:id

@@ -1,0 +1,39 @@
+* Esta ruta es para registrar un ambiente
+
+http://localhost:3000/ambientes/registrar
+
+* json (POST)
+
+    {
+        "nombre_ambiente": "Sala de Conferencias",
+        "estado_ambiente": "libre",
+        "fk_area": 2
+    }
+
+
+* Esta ruta es para listar un ambiente (GET)
+
+http://localhost:3000/ambientes/listar
+
+
+* Esta ruta es para actualizar un ambiente
+
+http://localhost:3000/ambientes/actualizar/:id
+
+* json (PUT)
+
+    {
+        "nombre_ambiente": "Sala de Conferencias",
+        "estado_ambiente": "libre",
+        "fk_area": 2
+    }
+
+
+* Esta ruta es para eliminar un ambiente (DELETE)
+
+http://localhost:3000/ambientes/eliminar/:id
+
+
+* Esta ruta es para buscar un ambiente (GET)
+
+http://localhost:3000/ambientes/buscar/:id

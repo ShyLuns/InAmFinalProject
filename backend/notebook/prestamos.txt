@@ -39,7 +39,7 @@ http://localhost:3000/prestamos/actualizar/:id
 
 * Esta ruta es para eliminar un prestamo (DELETE)
 
-http://localhost:3000/prestamos/eliminar
+http://localhost:3000/prestamos/eliminar/:id
 
 
 * Esta ruta es para buscar un prestamo (GET)
