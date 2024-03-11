@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from "body-parser";
 import usuarioRouter from './routes/usuario.router.js';
 import prestamosRouter from './routes/prestamos.router.js';
+import ambientesRouter from './routes/ambientes.router.js';
 
 const app = express();
 const PORT = 3000;
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(usuarioRouter);
 app.use(prestamosRouter);
+app.use(ambientesRouter);
 
 //start server
 
