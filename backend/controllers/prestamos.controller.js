@@ -102,7 +102,7 @@ export const actualizarPrestamos = async (req, res) => {
         ]);
 
         if (result.affectedRows > 0) {
-            // Obtener los datos actualizados del préstamo
+
             const [prestamoActualizado] = await pool.query('SELECT * FROM prestamo WHERE id_prestamo = ?', [id]);
 
             return res.status(200).json({
