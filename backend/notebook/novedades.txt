@@ -1,0 +1,41 @@
+* Esta ruta es para registrar una novedad
+http://localhost:3000/novedades/registrar
+
+* json (POST)
+
+    {
+        "tipo_novedad": "Daño",
+        "descripcion_novedad": "Se encontró un daño en el equipo",
+        "responsable_registro": "Wilson",
+        "fecha_novedad": "2024-03-15",
+        "fk_id_prestamo": 1
+    }
+
+* Esta ruta es para listar una novedad (GET)
+
+http://localhost:3000/novedades/listar
+
+
+* Esta ruta es para actualizar una novedad
+
+http://localhost:3000/novedadess/actualizar/:id
+
+* json (PUT)
+
+    {
+        "tipo_novedad": "Daño",
+        "descripcion_novedad": "Se encontró un daño en el equipo",
+        "responsable_registro": "Wilson",
+        "fecha_novedad": "2024-03-15",
+        "fk_id_prestamo": 1
+    }
+
+
+* Esta ruta es para eliminar una novedad (DELETE)
+
+http://localhost:3000/novedades/eliminar/:id
+
+
+* Esta ruta es para buscar un ambiente (GET)
+
+http://localhost:3000/novedades/buscar/:id

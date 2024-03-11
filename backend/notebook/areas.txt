@@ -1,0 +1,37 @@
+* Esta ruta es para registrar un area
+
+http://localhost:3000/areas/registrar
+
+* json (POST)
+
+    {
+        "nombre_area": "tic",
+        "estado": "libre",
+    }
+
+
+* Esta ruta es para listar un area (GET)
+
+http://localhost:3000/areas/listar
+
+
+* Esta ruta es para actualizar un area
+
+http://localhost:3000/areas/actualizar/:id
+
+* json (PUT)
+
+    {
+        "nombre_area": "tic",
+        "estado": "libre",
+    }
+
+
+* Esta ruta es para eliminar un area (DELETE)
+
+http://localhost:3000/areas/eliminar/:id
+
+
+* Esta ruta es para buscar un area (GET)
+
+http://localhost:3000/areas/buscar/:id
