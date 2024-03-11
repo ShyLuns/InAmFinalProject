@@ -31,7 +31,7 @@ export const registrarElemento = async (req, res) => {
 
         if (rows.affectedRows > 0) {
 
-            const [elementoRegistrado] = await pool.query('SELECT * FROM elementos WHERE id_elemento = ?', [rows.insertId]);
+            const [elementoRegistrado] = await pool.query('SELECT * FROM elementos WHERE id_elementos = ?', [rows.insertId]);
 
             return res.status(200).json({
                 mensaje: 'Elemento registrado con éxito',
@@ -70,14 +70,14 @@ export const eliminarElemento = async (req, res) => {
 export const actualizarElemento = async (req, res) => {
     try {
         const id = req.params.id;
-        const { codigo_sena, estado, nombre_elemento, tipo_elemento, fk_ambiente } = req.body;
-        const sql = 'UPDATE elementos SET codigo_sena = ?, estado = ?, nombre_elemento = ?, tipo_elemento = ?, fk_ambiente = ? WHERE codigo_sena = ?';
+        const { codigo_sena, estado, nombre_elemento, tipo_elemento, nota_cambio, cambios, fk_ambiente } = req.body;
+        const sql = 'UPDATE elementos SET codigo_sena = ?, estado = ?, nombre_elemento = ?, tipo_elemento = ?, nota_cambio = ?, cambios = ?, fk_ambiente = ? WHERE codigo_sena = ?';
 
-        const [rows] = await pool.query(sql, [codigo_sena, estado, nombre_elemento, tipo_elemento, fk_ambiente, id]);
+        const [rows] = await pool.query(sql, [codigo_sena, estado, nombre_elemento, tipo_elemento, nota_cambio, cambios, fk_ambiente, id]);
 
         if (rows.affectedRows > 0) {
 
-            const [elementoActualizado] = await pool.query('SELECT * FROM elementos WHERE id_elemento = ?', [id]);
+            const [elementoActualizado] = await pool.query('SELECT * FROM elementos WHERE id_elementos = ?', [id]);
 
             return res.status(200).json({
                 mensaje: 'Elemento actualizado con éxito',
