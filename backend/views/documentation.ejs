@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Documentation</title>
+</head>
+
+<body>
+
+    <!--modulo usuarios-->
+
+    <h1 class="text-center">Modulo usuarios</h1>
+
+    <!--listar usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Listar usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Listar usuarios</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para listar los usuarios</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200"
+    "message: "Usuarios listados con exito"
+    Body :{
+      "id_usuario": 1,
+      "nombre": "nombre",
+      "identificacion": 1000000000,
+      "telefono": "3333333333",
+      "correo": "correo@gmail.com",
+      "contraseña": "contraseña",
+      "tipo_usuario": "rol",
+      "estado_usuario": "estado"
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al obtener usuarios"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--registrar usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Registrar usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Listar usuarios</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para registrar los usuarios</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>                  
+    "nombre": "nombre",
+    "identificacion": 1000000000,
+    "telefono": "3333333333",
+    "correo": "correo@gmail.com",
+    "contraseña": "contraseña",
+    "tipo_usuario": "rol",
+    "estado_usuario": "estado"
+                          <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200",
+    "message: "Usuario creado con exito"
+    Body :{
+      "id_usuario": 1,
+      "nombre": "nombre",
+      "identificacion": 1000000000,
+      "telefono": "3333333333",
+      "correo": "correo@gmail.com",
+      "contraseña": "contraseña",
+      "tipo_usuario": "rol",
+      "estado_usuario": "estado"
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al crear usuario"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--buscar un usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Buscar usuario por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Buscar usuario por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/buscar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para buscar un usuario por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200"
+    "message: "Usuarios encontrado con exito"
+    Body :{
+      "id_usuario": 1,
+      "nombre": "nombre",
+      "identificacion": 1000000000,
+      "telefono": "3333333333",
+      "correo": "correo@gmail.com",
+      "contraseña": "contraseña",
+      "tipo_usuario": "rol",
+      "estado_usuario": "estado"
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al obtener usuario"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Actualizar un usuario por ID-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Actualizar usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Actualizar usuario</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para actualizar un usuario</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
+    "nombre": "nombre",
+    "identificacion": 1000000000,
+    "telefono": "3333333333",
+    "correo": "correo@gmail.com",
+    "contraseña": "contraseña",
+    "tipo_usuario": "rol",
+    "estado_usuario": "estado"<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200"
+    "message: "Usuario actualizado con exito"
+    Body :{
+      "id_usuario": 1,
+      "nombre": "nombre",
+      "identificacion": 1000000000,
+      "telefono": "3333333333",
+      "correo": "correo@gmail.com",
+      "contraseña": "contraseña",
+      "tipo_usuario": "rol",
+      "estado_usuario": "estado"
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al actualizar el usuario"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--eliminar un usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Eliminar un usuario por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Eliminar usuario por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/eliminar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para eliminar un usuario por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200"
+    "message: "Usuario eliminado exitosamente"
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al eliminar usuario"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--validar un usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Validar usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Validar usuario</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/validar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para validar un usuario con token</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
+    "identificacion": "usuario123",
+    "contraseña": "clave123"
+                          <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200",
+    "message: "Credenciales válidas"
+    Body :{
+      "id_usuario": 1,
+      "nombre": "nombre",
+      "correo": correo
+    },
+    
+    {
+        "token": token
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al validar las credenciales"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Cambiar estado del usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Cambiar estado de usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Cambiar estado del usuario</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/cambiar-estado/:identificacion</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para cambiar el estado del usuario por identificacion</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
+    "nuevoEstado": "inactivo"
+                          <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200",
+    "message: "Estado del usuario actualizado exitosamente"
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al cambiar el estado del usuario"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>
