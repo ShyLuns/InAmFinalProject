@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Documentation</title>
+</head>
+
+<body>
+
+    <!--modulo usuarios-->
+
+    <h1 class="text-center">Modulo usuarios</h1>
+
+    <!--listar usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Listar usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Listar usuarios</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para listar los usuarios</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200"
+    "message: "Usuarios listados con exito"
+    Body :{
+      "id_usuario": 1,
+      "nombre": "nombre",
+      "identificacion": 1000000000,
+      "telefono": "3333333333",
+      "correo": "correo@gmail.com",
+      "contraseña": "contraseña",
+      "tipo_usuario": "rol",
+      "estado_usuario": "estado"
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al obtener usuarios"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--registrar usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Registrar usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Listar usuarios</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para registrar los usuarios</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>                  
+    "nombre": "nombre",
+    "identificacion": 1000000000,
+    "telefono": "3333333333",
+    "correo": "correo@gmail.com",
+    "contraseña": "contraseña",
+    "tipo_usuario": "rol",
+    "estado_usuario": "estado"
+                          <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200",
+    "message: "Usuario creado con exito"
+    Body :{
+      "id_usuario": 1,
+      "nombre": "nombre",
+      "identificacion": 1000000000,
+      "telefono": "3333333333",
+      "correo": "correo@gmail.com",
+      "contraseña": "contraseña",
+      "tipo_usuario": "rol",
+      "estado_usuario": "estado"
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al crear usuario"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--buscar un usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Buscar usuario por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Buscar usuario por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/buscar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para buscar un usuario por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200"
+    "message: "Usuarios encontrado con exito"
+    Body :{
+      "id_usuario": 1,
+      "nombre": "nombre",
+      "identificacion": 1000000000,
+      "telefono": "3333333333",
+      "correo": "correo@gmail.com",
+      "contraseña": "contraseña",
+      "tipo_usuario": "rol",
+      "estado_usuario": "estado"
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al obtener usuario"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Actualizar un usuario por ID-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Actualizar usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Actualizar usuario</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para actualizar un usuario</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
+    "nombre": "nombre",
+    "identificacion": 1000000000,
+    "telefono": "3333333333",
+    "correo": "correo@gmail.com",
+    "contraseña": "contraseña",
+    "tipo_usuario": "rol",
+    "estado_usuario": "estado"<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200"
+    "message: "Usuario actualizado con exito"
+    Body :{
+      "id_usuario": 1,
+      "nombre": "nombre",
+      "identificacion": 1000000000,
+      "telefono": "3333333333",
+      "correo": "correo@gmail.com",
+      "contraseña": "contraseña",
+      "tipo_usuario": "rol",
+      "estado_usuario": "estado"
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al actualizar el usuario"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--eliminar un usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Eliminar un usuario por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Eliminar usuario por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/eliminar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para eliminar un usuario por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200"
+    "message: "Usuario eliminado exitosamente"
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al eliminar usuario"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--validar un usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Validar usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Validar usuario</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/validar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para validar un usuario con token</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
+    "identificacion": "usuario123",
+    "contraseña": "clave123"
+                          <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200",
+    "message: "Credenciales válidas"
+    Body :{
+      "id_usuario": 1,
+      "nombre": "nombre",
+      "correo": correo
+    },
+    
+    {
+        "token": token
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al validar las credenciales"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Cambiar estado del usuario-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Cambiar estado de usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Cambiar estado del usuario</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/usuarios/cambiar-estado/:identificacion</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para cambiar el estado del usuario por identificacion</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
+    "nuevoEstado": "inactivo"
+                          <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200",
+    "message: "Estado del usuario actualizado exitosamente"
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al cambiar el estado del usuario"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--modulo prestamos-->
+
+    <h1 class="text-center">Modulo prestamos</h1>
+
+    <!--listar prestamo-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Listar prestamos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Listar prestamos</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/prestamos/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para listar los prestamos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200"
+    "message: "Préstamos listados con éxito"
+    Body :{
+        "nombre_ambiente": "nombre_ambiente",
+        "fecha_prestamo": "2024-03-10",
+        "fecha_entrega": "2024-03-10",
+        "nombre_celador": "Celador",
+        "observaciones": "observacion",
+        "fk_usuario": 2,
+        "fk_ambiente": 1
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al obtener la lista de préstamos"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--registrar un prestamo-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Registrar prestamo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Registrar prestamos</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/prestamos/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para registrar los prestamos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>                  
+    "nombre_ambiente": "ambiente",
+    "fecha_prestamo": "2024-03-10",
+    "fecha_entrega": "2024-03-15",
+    "nombre_celador": "Celador",
+    "observaciones": "observacion",
+    "fk_usuario": 2,
+    "fk_ambiente": 1
+                          <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+    "status": "200",
+    "message: "Préstamo registrado con éxito"
+    Body :{
+        "id_ambiente": 1
+        "nombre_ambiente": "ambiente",
+        "fecha_prestamo": "2024-03-10",
+        "fecha_entrega": "2024-03-15",
+        "nombre_celador": "Celador",
+        "observaciones": "observacion",
+        "fk_usuario": 2,
+        "fk_ambiente": 1
+    }
+                        </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+    "status": "500"
+    Body :{
+      "message: "Error al registrar préstamo"
+    }
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--buscar un prestamo-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Buscar prestamo por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Buscar prestamo por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/prestamos/buscar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para buscar un prestamo por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+        "status": "200"
+        "message: "Préstamo consultado con éxito"
+        Body :{
+            "id_prestamo": 1
+            "nombre_ambiente": "ambiente",
+            "fecha_prestamo": "2024-03-10",
+            "fecha_entrega": "2024-03-10",
+            "nombre_celador": "Celador",
+            "observaciones": "observacion",
+            "fk_usuario": 2,
+            "fk_ambiente": 1
+        }
+                            </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+        "status": "500"
+        Body :{
+          "message: "Error al consultar préstamo"
+        }
+                            </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Actualizar un prestamo por ID-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Actualizar prestamo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Actualizar prestamo</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/prestamos/actualizar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para actualizar un prestamo</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
+    "nombre_ambiente": "Sala de Conferencias",
+    "fecha_prestamo": "2024-03-10",
+    "fecha_entrega": "2024-03-15",
+    "nombre_celador": "Juan Celador",
+    "observaciones": "Reunión de equipo",
+    "fk_usuario": 2,
+    "fk_ambiente": 1<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+        "status": "200"
+        "message: "Prestamo actualizado con exito"
+        Body :{
+            "id_ambiente": 1
+            "nombre_ambiente": "ambiente",
+            "fecha_prestamo": "2024-03-10",
+            "fecha_entrega": "2024-03-15",
+            "nombre_celador": "Celador",
+            "observaciones": "observacion",
+            "fk_usuario": 2,
+            "fk_ambiente": 1
+        }
+                            </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+        "status": "500"
+        Body :{
+          "message: "Error al actualizar el prestamo"
+        }
+                            </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--eliminar un prestamo-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Eliminar un prestamo por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Eliminar prestamo por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/prestamos/eliminar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para eliminar un prestamo por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+        "status": "200"
+        "message: "Préstamo eliminado con éxito: ${id}"
+                            </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+        "status": "500"
+        Body :{
+          "message: "Error al eliminar el prestamo"
+        }
+                            </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--modulo novedades-->
+
+    <h1 class="text-center">Modulo novedades</h1>
+
+    <!--listar novedad-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Listar novedad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Listar novedad</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/prestamos/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para listar las novedades</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+        "status": "200"
+        "message: "Novedades listadas con éxito"
+        Body :{
+            "id_novedad": 4,
+            "tipo_novedad": "tipo",
+            "descripcion_novedad": "descripcion",
+            "responsable_registro": "nombre",
+            "fecha_novedad": "2024-03-15",
+            "fk_id_prestamo": 2
+          }
+                            </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+        "status": "500"
+        Body :{
+          "message: "Error al listar novedades"
+        }
+                            </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--registrar una novedad-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Registrar novedad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Registrar novedad</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/novedades/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para registrar las novedades</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>                  
+    "tipo_novedad": "tipo",
+    "descripcion_novedad": "descripcion",
+    "responsable_registro": "nombre",
+    "fecha_novedad": "2024-03-15",
+    "fk_id_prestamo": 2
+                              <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+        "status": "200",
+        "message: "Novedad registrada con éxito
+        Body :{
+            "tipo_novedad": "tipo",
+            "descripcion_novedad": "descripcion",
+            "responsable_registro": "nombre",
+            "fecha_novedad": "2024-03-15",
+            "fk_id_prestamo": 2
+        }
+                            </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+        "status": "500"
+        Body :{
+          "message: "Error al registrar novedad"
+        }
+                            </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--buscar una novedad-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Buscar novedad por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Buscar novedad por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/novedades/buscar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para buscar una novedad por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+            "status": "200"
+            "message: "Préstamo consultado con éxito"
+            Body :{
+                "tipo_novedad": "tipo",
+                "descripcion_novedad": "descripcion",
+                "responsable_registro": "nombre",
+                "fecha_novedad": "2024-03-15",
+                "fk_id_prestamo": 2
+            }
+                                </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al registrar novedad"
+            }
+                                </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Actualizar una novedad por ID-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Actualizar novedad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Actualizar novedad</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/novedades/actualizar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para actualizar una novedad</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
+    "tipo_novedad": "tipo",
+    "descripcion_novedad": "descripcion",
+    "responsable_registro": "nombre",
+    "fecha_novedad": "2024-03-15",
+    "fk_id_prestamo": 2 <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+            "status": "200"
+            "message: "Prestamo actualizado con exito"
+            Body :{
+                "id_novedad": 1
+                "tipo_novedad": "tipo",
+                "descripcion_novedad": "descripcion",
+                "responsable_registro": "nombre",
+                "fecha_novedad": "2024-03-15",
+                "fk_id_prestamo": 2
+            }
+                                </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al actualizar la novedad"
+            }
+                                </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--eliminar un prestamo-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Eliminar una naovedad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Eliminar novedad por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/novedades/eliminar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para eliminar una novedad por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+            "status": "200"
+            "message: "Novedad eliminada con éxito: ${id}"
+                                </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al eliminar la novedad"
+            }
+                                </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+        <!--modulo elementos-->
+
+        <h1 class="text-center">Modulo prestamos</h1>
+
+        <!--listar elemento-->
+
+        <div class="container mt-5">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th colspan="2" class="text-center">Listar elemento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Número</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre endpoint</td>
+                        <td>Listar elemento</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:3000/elementos/listar</td>
+                    </tr>
+                    <tr>
+                        <td>Descripción</td>
+                        <td>Endpoint para listar los elementos</td>
+                    </tr>
+                    <tr>
+                        <td>Verbo HTTP</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td>Header</td>
+                        <td>Content-type: JSON</td>
+                    </tr>
+                    <tr>
+                        <td>Request JSON</td>
+                        <td>
+                            <pre>{<br>  null<br>}</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Response</td>
+                        <td>
+                            <div class="mb-3">Correcto:</div>
+                            <pre>
+        "status": "200"
+        "message: "Elementos listados con éxito"
+        Body :{
+            "codigo_sena": "123",
+            "estado": "estado",
+            "nombre_elemento": "nombre",
+            "tipo_elemento": "tipo",
+            "nota_cambio": "nota",
+            "cambios": "si",
+            "fk_ambiente": 1
+        }
+                            </pre>
+                            <div class="mb-3">Incorrecto:</div>
+                            <pre>
+        "status": "500"
+        Body :{
+          "message: "Error al listar elementos"
+        }
+                            </pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <!--registrar un elemento-->
+    
+        <div class="container mt-5">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th colspan="2" class="text-center">Registrar elemento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Número</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre endpoint</td>
+                        <td>Registrar elemento</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:3000/elementos/registrar</td>
+                    </tr>
+                    <tr>
+                        <td>Descripción</td>
+                        <td>Endpoint para registrar los elementos</td>
+                    </tr>
+                    <tr>
+                        <td>Verbo HTTP</td>
+                        <td>POST</td>
+                    </tr>
+                    <tr>
+                        <td>Header</td>
+                        <td>Content-type: JSON</td>
+                    </tr>
+                    <tr>
+                        <td>Request JSON</td>
+                        <td>
+                            <pre>{<br>                  
+        "codigo_sena": "123",
+        "estado": "estado",
+        "nombre_elemento": "nombre",
+        "tipo_elemento": "tipo",
+        "nota_cambio": "nota",
+        "cambios": "si",
+        "fk_ambiente": 1
+                              <br>}</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Response</td>
+                        <td>
+                            <div class="mb-3">Correcto:</div>
+                            <pre>
+        "status": "200",
+        "message: "Elemento registrado con éxito"
+        Body :{
+            "id_elemento": 1
+            "codigo_sena": "123",
+            "estado": "estado",
+            "nombre_elemento": "nombre",
+            "tipo_elemento": "tipo",
+            "nota_cambio": "nota",
+            "cambios": "si",
+            "fk_ambiente": 1
+        }
+                            </pre>
+                            <div class="mb-3">Incorrecto:</div>
+                            <pre>
+        "status": "500"
+        Body :{
+          "message: "Error al registrar elemento"
+        }
+                            </pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+            <!--buscar un elemento-->
+    
+            <div class="container mt-5">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th colspan="2" class="text-center">Buscar elemento por ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Número</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Nombre endpoint</td>
+                            <td>Buscar elemento por ID</td>
+                        </tr>
+                        <tr>
+                            <td>URL</td>
+                            <td>http://localhost:3000/elementos/buscar/:id</td>
+                        </tr>
+                        <tr>
+                            <td>Descripción</td>
+                            <td>Endpoint para buscar un elemento por ID</td>
+                        </tr>
+                        <tr>
+                            <td>Verbo HTTP</td>
+                            <td>GET</td>
+                        </tr>
+                        <tr>
+                            <td>Header</td>
+                            <td>Content-type: JSON</td>
+                        </tr>
+                        <tr>
+                            <td>Request JSON</td>
+                            <td>
+                                <pre>{<br>  null<br>}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Response</td>
+                            <td>
+                                <div class="mb-3">Correcto:</div>
+                                <pre>
+            "status": "200"
+            "message: "Elemento consultado con éxito"
+            Body :{
+                "id_elemento": 1
+                "codigo_sena": "123",
+                "estado": "estado",
+                "nombre_elemento": "nombre",
+                "tipo_elemento": "tipo",
+                "nota_cambio": "nota",
+                "cambios": "si",
+                "fk_ambiente": 1
+            }
+                                </pre>
+                                <div class="mb-3">Incorrecto:</div>
+                                <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al consultar elemento"
+            }
+                                </pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <!--Actualizar un prestamo por ID-->
+    
+            <div class="container mt-5">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th colspan="2" class="text-center">Actualizar elemento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Número</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Nombre endpoint</td>
+                            <td>Actualizar elemento</td>
+                        </tr>
+                        <tr>
+                            <td>URL</td>
+                            <td>http://localhost:3000/elementos/actualizar</td>
+                        </tr>
+                        <tr>
+                            <td>Descripción</td>
+                            <td>Endpoint para actualizar un elemento</td>
+                        </tr>
+                        <tr>
+                            <td>Verbo HTTP</td>
+                            <td>PUT</td>
+                        </tr>
+                        <tr>
+                            <td>Header</td>
+                            <td>Content-type: JSON</td>
+                        </tr>
+                        <tr>
+                            <td>Request JSON</td>
+                            <td>
+                                <pre>{<br>
+        "codigo_sena": "123",
+        "estado": "estado",
+        "nombre_elemento": "nombre",
+        "tipo_elemento": "tipo",
+        "nota_cambio": "nota",
+        "cambios": "si",
+        "fk_ambiente": 1<br>}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Response</td>
+                            <td>
+                                <div class="mb-3">Correcto:</div>
+                                <pre>
+            "status": "200"
+            "message: "elemento actualizado con exito"
+            Body :{
+                "codigo_sena": "123",
+                "estado": "estado",
+                "nombre_elemento": "nombre",
+                "tipo_elemento": "tipo",
+                "nota_cambio": "nota",
+                "cambios": "si",
+                "fk_ambiente": 1
+            }
+                                </pre>
+                                <div class="mb-3">Incorrecto:</div>
+                                <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al actualizar el elemento"
+            }
+                                </pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <!--eliminar un prestamo-->
+        
+            <div class="container mt-5">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th colspan="2" class="text-center">Eliminar un elemento por ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Número</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Nombre endpoint</td>
+                            <td>Eliminar elemento por ID</td>
+                        </tr>
+                        <tr>
+                            <td>URL</td>
+                            <td>http://localhost:3000/elementos/eliminar/:id</td>
+                        </tr>
+                        <tr>
+                            <td>Descripción</td>
+                            <td>Endpoint para eliminar un elemento por ID</td>
+                        </tr>
+                        <tr>
+                            <td>Verbo HTTP</td>
+                            <td>DELETE</td>
+                        </tr>
+                        <tr>
+                            <td>Header</td>
+                            <td>Content-type: JSON</td>
+                        </tr>
+                        <tr>
+                            <td>Request JSON</td>
+                            <td>
+                                <pre>{<br>  null<br>}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Response</td>
+                            <td>
+                                <div class="mb-3">Correcto:</div>
+                                <pre>
+            "status": "200"
+            "message: "elemento eliminado con éxito: ${id}"
+                                </pre>
+                                <div class="mb-3">Incorrecto:</div>
+                                <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al eliminar el elemento"
+            }
+                                </pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+</body>
+
+</html>
