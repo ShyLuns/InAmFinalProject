@@ -4,7 +4,7 @@ import styled from "styled-components";
 export function AdminTemplate() {
     return (
         <Container>
-            <h1>Apartado de administrador</h1>
+            <h1>Apartado de administrador hnolsafgsfsdf</h1>
         </Container>
     );
 }
