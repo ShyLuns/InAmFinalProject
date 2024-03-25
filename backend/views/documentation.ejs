@@ -1225,55 +1225,55 @@
         </table>
     </div>
 
-        <!--modulo elementos-->
+    <!--modulo elementos-->
 
-        <h1 class="text-center">Modulo prestamos</h1>
+    <h1 class="text-center">Modulo elementos</h1>
 
-        <!--listar elemento-->
+    <!--listar elemento-->
 
-        <div class="container mt-5">
-            <table class="table table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th colspan="2" class="text-center">Listar elemento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Número</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Nombre endpoint</td>
-                        <td>Listar elemento</td>
-                    </tr>
-                    <tr>
-                        <td>URL</td>
-                        <td>http://localhost:3000/elementos/listar</td>
-                    </tr>
-                    <tr>
-                        <td>Descripción</td>
-                        <td>Endpoint para listar los elementos</td>
-                    </tr>
-                    <tr>
-                        <td>Verbo HTTP</td>
-                        <td>GET</td>
-                    </tr>
-                    <tr>
-                        <td>Header</td>
-                        <td>Content-type: JSON</td>
-                    </tr>
-                    <tr>
-                        <td>Request JSON</td>
-                        <td>
-                            <pre>{<br>  null<br>}</pre>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Response</td>
-                        <td>
-                            <div class="mb-3">Correcto:</div>
-                            <pre>
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Listar elemento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Listar elemento</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/elementos/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para listar los elementos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
         "status": "200"
         "message: "Elementos listados con éxito"
         Body :{
@@ -1286,57 +1286,57 @@
             "fk_ambiente": 1
         }
                             </pre>
-                            <div class="mb-3">Incorrecto:</div>
-                            <pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
         "status": "500"
         Body :{
           "message: "Error al listar elementos"
         }
                             </pre>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    
-        <!--registrar un elemento-->
-    
-        <div class="container mt-5">
-            <table class="table table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th colspan="2" class="text-center">Registrar elemento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Número</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Nombre endpoint</td>
-                        <td>Registrar elemento</td>
-                    </tr>
-                    <tr>
-                        <td>URL</td>
-                        <td>http://localhost:3000/elementos/registrar</td>
-                    </tr>
-                    <tr>
-                        <td>Descripción</td>
-                        <td>Endpoint para registrar los elementos</td>
-                    </tr>
-                    <tr>
-                        <td>Verbo HTTP</td>
-                        <td>POST</td>
-                    </tr>
-                    <tr>
-                        <td>Header</td>
-                        <td>Content-type: JSON</td>
-                    </tr>
-                    <tr>
-                        <td>Request JSON</td>
-                        <td>
-                            <pre>{<br>                  
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--registrar un elemento-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Registrar elemento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Registrar elemento</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/elementos/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para registrar los elementos</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>                  
         "codigo_sena": "123",
         "estado": "estado",
         "nombre_elemento": "nombre",
@@ -1345,13 +1345,13 @@
         "cambios": "si",
         "fk_ambiente": 1
                               <br>}</pre>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Response</td>
-                        <td>
-                            <div class="mb-3">Correcto:</div>
-                            <pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
         "status": "200",
         "message: "Elemento registrado con éxito"
         Body :{
@@ -1365,64 +1365,64 @@
             "fk_ambiente": 1
         }
                             </pre>
-                            <div class="mb-3">Incorrecto:</div>
-                            <pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
         "status": "500"
         Body :{
           "message: "Error al registrar elemento"
         }
                             </pre>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    
-            <!--buscar un elemento-->
-    
-            <div class="container mt-5">
-                <table class="table table-bordered">
-                    <thead class="table-dark">
-                        <tr>
-                            <th colspan="2" class="text-center">Buscar elemento por ID</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Número</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>Nombre endpoint</td>
-                            <td>Buscar elemento por ID</td>
-                        </tr>
-                        <tr>
-                            <td>URL</td>
-                            <td>http://localhost:3000/elementos/buscar/:id</td>
-                        </tr>
-                        <tr>
-                            <td>Descripción</td>
-                            <td>Endpoint para buscar un elemento por ID</td>
-                        </tr>
-                        <tr>
-                            <td>Verbo HTTP</td>
-                            <td>GET</td>
-                        </tr>
-                        <tr>
-                            <td>Header</td>
-                            <td>Content-type: JSON</td>
-                        </tr>
-                        <tr>
-                            <td>Request JSON</td>
-                            <td>
-                                <pre>{<br>  null<br>}</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Response</td>
-                            <td>
-                                <div class="mb-3">Correcto:</div>
-                                <pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--buscar un elemento-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Buscar elemento por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Buscar elemento por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/elementos/buscar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para buscar un elemento por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
             "status": "200"
             "message: "Elemento consultado con éxito"
             Body :{
@@ -1436,57 +1436,57 @@
                 "fk_ambiente": 1
             }
                                 </pre>
-                                <div class="mb-3">Incorrecto:</div>
-                                <pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
             "status": "500"
             Body :{
               "message: "Error al consultar elemento"
             }
                                 </pre>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-    
-            <!--Actualizar un prestamo por ID-->
-    
-            <div class="container mt-5">
-                <table class="table table-bordered">
-                    <thead class="table-dark">
-                        <tr>
-                            <th colspan="2" class="text-center">Actualizar elemento</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Número</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>Nombre endpoint</td>
-                            <td>Actualizar elemento</td>
-                        </tr>
-                        <tr>
-                            <td>URL</td>
-                            <td>http://localhost:3000/elementos/actualizar</td>
-                        </tr>
-                        <tr>
-                            <td>Descripción</td>
-                            <td>Endpoint para actualizar un elemento</td>
-                        </tr>
-                        <tr>
-                            <td>Verbo HTTP</td>
-                            <td>PUT</td>
-                        </tr>
-                        <tr>
-                            <td>Header</td>
-                            <td>Content-type: JSON</td>
-                        </tr>
-                        <tr>
-                            <td>Request JSON</td>
-                            <td>
-                                <pre>{<br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Actualizar un elemento por ID-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Actualizar elemento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Actualizar elemento</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/elementos/actualizar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para actualizar un elemento</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
         "codigo_sena": "123",
         "estado": "estado",
         "nombre_elemento": "nombre",
@@ -1494,13 +1494,13 @@
         "nota_cambio": "nota",
         "cambios": "si",
         "fk_ambiente": 1<br>}</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Response</td>
-                            <td>
-                                <div class="mb-3">Correcto:</div>
-                                <pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
             "status": "200"
             "message: "elemento actualizado con exito"
             Body :{
@@ -1513,79 +1513,766 @@
                 "fk_ambiente": 1
             }
                                 </pre>
-                                <div class="mb-3">Incorrecto:</div>
-                                <pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
             "status": "500"
             Body :{
               "message: "Error al actualizar el elemento"
             }
                                 </pre>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        
-            <!--eliminar un prestamo-->
-        
-            <div class="container mt-5">
-                <table class="table table-bordered">
-                    <thead class="table-dark">
-                        <tr>
-                            <th colspan="2" class="text-center">Eliminar un elemento por ID</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Número</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>Nombre endpoint</td>
-                            <td>Eliminar elemento por ID</td>
-                        </tr>
-                        <tr>
-                            <td>URL</td>
-                            <td>http://localhost:3000/elementos/eliminar/:id</td>
-                        </tr>
-                        <tr>
-                            <td>Descripción</td>
-                            <td>Endpoint para eliminar un elemento por ID</td>
-                        </tr>
-                        <tr>
-                            <td>Verbo HTTP</td>
-                            <td>DELETE</td>
-                        </tr>
-                        <tr>
-                            <td>Header</td>
-                            <td>Content-type: JSON</td>
-                        </tr>
-                        <tr>
-                            <td>Request JSON</td>
-                            <td>
-                                <pre>{<br>  null<br>}</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Response</td>
-                            <td>
-                                <div class="mb-3">Correcto:</div>
-                                <pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--eliminar un elemento-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Eliminar un elemento por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Eliminar elemento por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/elementos/eliminar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para eliminar un elemento por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
             "status": "200"
             "message: "elemento eliminado con éxito: ${id}"
                                 </pre>
-                                <div class="mb-3">Incorrecto:</div>
-                                <pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
             "status": "500"
             Body :{
               "message: "Error al eliminar el elemento"
             }
                                 </pre>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--modulo areas-->
+
+    <h1 class="text-center">Modulo areas</h1>
+
+    <!--listar area-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Listar area</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Listar area</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/areas/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para listar las areas</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+        "status": "200"
+        "message: "area listada con éxito"
+        Body :{
+            "id_area": 1,
+            "nombre_area": "nombre",
+            "estado": "estado"
+        }
+                            </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+        "status": "500"
+        Body :{
+          "message: "Error al listar areas"
+        }
+                            </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--registrar un area-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Registrar area</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Registrar area/td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/areas/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para registrar un area</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>                  
+                            {
+                                "nombre_area": "nombre",
+                                "estado": "estado"
+                            }
+                              <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+        "status": "200",
+        "message: "Area registrada con éxito"
+        Body :{
+            "id_area": 1,
+            "nombre_area": "nombre",
+            "estado": "estado"
+        }
+                            </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+        "status": "500"
+        Body :{
+          "message: "Error al registrar el area"
+        }
+                            </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--buscar un area-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Buscar area por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Buscar area por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/areas/buscar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para buscar un area por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+            "status": "200"
+            "message: "area consultada con éxito"
+            Body :{
+                "id_area": 1,
+                "nombre_area": "nombre",
+                "estado": "estado"
+            }
+                                </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al consultar area"
+            }
+                                </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Actualizar un area por ID-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Actualizar area</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Actualizar area</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/areas/actualizar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para actualizar un area</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
+                            {
+                                "nombre_area": "nombre",
+                                "estado": "estado"
+                            }<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+            "status": "200"
+            "message: "area actualizada con exito"
+            Body :{
+                "id_area": 1,
+                "nombre_area": "nombre",
+                "estado": "estado"
+            }
+                                </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al actualizar el area"
+            }
+                                </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--eliminar un area-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Eliminar un area por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Eliminar area por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/areas/eliminar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para eliminar un area por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+            "status": "200"
+            "message: "area eliminada con éxito: ${id}"
+                                </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al eliminar el area"
+            }
+                                </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--modulo ambientes-->
+
+    <h1 class="text-center">Modulo ambientes</h1>
+
+    <!--listar ambiente-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Listar ambiente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Listar ambiente</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/ambientes/listar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para listar los ambientes</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+            "status": "200"
+            "message: "ambiente listado con éxito"
+            Body :{
+                "id_ambiente": 1,
+                "nombre_ambiente": "nombre",
+                "estado_ambiente": "estado",
+                "fk_area": "1"
+            }
+                                </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al listar ambientes"
+            }
+                                </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--registrar un ambiente-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Registrar ambiente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Registrar ambiente/td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/ambientes/registrar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para registrar un ambiente</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>POST</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>                  
+                            {
+                                "nombre_ambiente": "nombre",
+                                "estado_ambiente": "estado",
+                                "fk_area": "1"
+                            }
+                                  <br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+            "status": "200",
+            "message: "ambiente registrado con éxito"
+            Body :{
+                "id_ambiente": 1,
+                "nombre_ambiente": "nombre",
+                "estado_ambiente": "estado",
+                "fk_area": "1"
+            }
+                                </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+            "status": "500"
+            Body :{
+              "message: "Error al registrar el ambiente"
+            }
+                                </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--buscar un ambiente-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Buscar ambiente por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Buscar ambiente por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/ambientes/buscar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para buscar un ambiente por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>GET</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+                "status": "200"
+                "message: "ambiente consultado con éxito"
+                Body :{
+                    "id_ambiente": 1,
+                    "nombre_ambiente": "nombre",
+                    "estado_ambiente": "estado",
+                    "fk_area": "1"
+                }
+                                    </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+                "status": "500"
+                Body :{
+                  "message: "Error al consultar ambientes"
+                }
+                                    </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Actualizar un ambiente por ID-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Actualizar ambiente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Actualizar ambiente</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/ambientes/actualizar</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para actualizar un ambiente</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>PUT</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>
+                            {
+                                "nombre_ambiente": "nombre",
+                                "estado_ambiente": "estado",
+                                "fk_area": "1"
+                            }<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+                "status": "200"
+                "message: "ambiente actualizada con exito"
+                Body :{
+                    "id_ambiente": 1,
+                    "nombre_ambiente": "nombre",
+                    "estado_ambiente": "estado",
+                    "fk_area": "1"
+                }
+                                    </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+                "status": "500"
+                Body :{
+                  "message: "Error al actualizar el ambiente"
+                }
+                                    </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--eliminar un ambiente-->
+
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2" class="text-center">Eliminar un ambiente por ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Número</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nombre endpoint</td>
+                    <td>Eliminar ambiente por ID</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>http://localhost:3000/ambientes/eliminar/:id</td>
+                </tr>
+                <tr>
+                    <td>Descripción</td>
+                    <td>Endpoint para eliminar un ambiente por ID</td>
+                </tr>
+                <tr>
+                    <td>Verbo HTTP</td>
+                    <td>DELETE</td>
+                </tr>
+                <tr>
+                    <td>Header</td>
+                    <td>Content-type: JSON</td>
+                </tr>
+                <tr>
+                    <td>Request JSON</td>
+                    <td>
+                        <pre>{<br>  null<br>}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response</td>
+                    <td>
+                        <div class="mb-3">Correcto:</div>
+                        <pre>
+                "status": "200"
+                "message: "ambiente eliminado con éxito: ${id}"
+                                    </pre>
+                        <div class="mb-3">Incorrecto:</div>
+                        <pre>
+                "status": "500"
+                Body :{
+                  "message: "Error al eliminar el ambiente
+                }
+                                    </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
 
 
 
