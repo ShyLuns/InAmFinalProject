@@ -215,3 +215,22 @@ export const cambiarEstadoUsuario = async (req, res) => {
         res.status(500).json({ mensaje: 'Error al cambiar el estado del usuario' });
     }
 };
+
+export const obtenerUsuariosPorEstado = async (req, res) => {
+    const { estado } = req.params;
+
+    try {
+        const [rows] = await pool.query('SELECT * FROM usuario WHERE estado_usuario = ?', [estado]);
+        res.status(200).json({
+            status: '200',
+            mensaje: `Usuarios con estado '${estado}' listados con éxito`,
+            usuarios: rows
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            status: '500',
+            mensaje: 'Error al obtener usuarios por estado'
+        });
+    }
+};
