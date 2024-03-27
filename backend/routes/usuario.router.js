@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { obtenerUsuarios, obtenerUsuarioPorId, crearUsuario, actualizarUsuario, eliminarUsuario, validarCredenciales, simularLogout, cambiarEstadoUsuario } from '../controllers/usuario.controller.js';
+import { obtenerUsuarios, obtenerUsuarioPorId, crearUsuario, actualizarUsuario, eliminarUsuario, validarCredenciales, simularLogout, cambiarEstadoUsuario, obtenerUsuariosPorEstado } from '../controllers/usuario.controller.js';
 import { body } from 'express-validator';
 
 const router = Router();
@@ -30,5 +30,7 @@ router.delete('/usuarios/eliminar/:id', eliminarUsuario);
 router.post('/usuarios/validar', validarCredenciales);
 router.post('/usuarios/logout', simularLogout);
 router.put('/usuarios/cambiar-estado/:identificacion', cambiarEstadoUsuario);
+
+router.get('/usuarios/estado/:estado', obtenerUsuariosPorEstado);
 
 export default router;
