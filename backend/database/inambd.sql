@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 04-03-2024 a las 16:36:42
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.1.12
+-- Servidor: localhost:3306
+-- Tiempo de generación: 27-03-2024 a las 21:37:44
+-- Versión del servidor: 8.0.30
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `ambientes` (
-  `id_ambiente` int(11) NOT NULL,
-  `nombre_ambiente` varchar(50) NOT NULL,
-  `estado_ambiente` enum('libre','ocupado','inaccesible') NOT NULL,
-  `fk_area` int(11) NOT NULL
+  `id_ambiente` int NOT NULL,
+  `nombre_ambiente` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `estado_ambiente` enum('libre','ocupado','inaccesible') COLLATE utf8mb4_general_ci NOT NULL,
+  `fk_area` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -48,9 +48,9 @@ INSERT INTO `ambientes` (`id_ambiente`, `nombre_ambiente`, `estado_ambiente`, `f
 --
 
 CREATE TABLE `areas` (
-  `id_area` int(11) NOT NULL,
-  `nombre_area` varchar(50) NOT NULL,
-  `estado` enum('ocupado','libre','inaccesible','') NOT NULL
+  `id_area` int NOT NULL,
+  `nombre_area` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `estado` enum('ocupado','libre','inaccesible','') COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -67,14 +67,14 @@ INSERT INTO `areas` (`id_area`, `nombre_area`, `estado`) VALUES
 --
 
 CREATE TABLE `elementos` (
-  `id_elementos` int(11) NOT NULL,
-  `codigo_sena` int(11) NOT NULL,
-  `estado` enum('dañado','reparacion','funcional','') NOT NULL,
-  `nombre_elemento` varchar(50) NOT NULL,
-  `tipo_elemento` enum('tecnologia','mobiliario','material didactico','suministros') NOT NULL,
-  `nota_cambio` text DEFAULT NULL,
-  `cambios` enum('si') DEFAULT NULL,
-  `fk_ambiente` int(11) NOT NULL
+  `id_elementos` int NOT NULL,
+  `codigo_sena` int NOT NULL,
+  `estado` enum('dañado','reparacion','funcional','') COLLATE utf8mb4_general_ci NOT NULL,
+  `nombre_elemento` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `tipo_elemento` enum('tecnologia','mobiliario','material didactico','suministros') COLLATE utf8mb4_general_ci NOT NULL,
+  `nota_cambio` text COLLATE utf8mb4_general_ci,
+  `cambios` enum('si') COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `fk_ambiente` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -91,12 +91,12 @@ INSERT INTO `elementos` (`id_elementos`, `codigo_sena`, `estado`, `nombre_elemen
 --
 
 CREATE TABLE `novedad` (
-  `id_novedad` int(11) NOT NULL,
-  `tipo_novedad` varchar(50) NOT NULL,
-  `descripcion_novedad` text NOT NULL,
-  `responsable_registro` varchar(100) NOT NULL,
+  `id_novedad` int NOT NULL,
+  `tipo_novedad` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `descripcion_novedad` text COLLATE utf8mb4_general_ci NOT NULL,
+  `responsable_registro` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `fecha_novedad` date NOT NULL,
-  `fk_id_prestamo` int(11) NOT NULL
+  `fk_id_prestamo` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -113,14 +113,14 @@ INSERT INTO `novedad` (`id_novedad`, `tipo_novedad`, `descripcion_novedad`, `res
 --
 
 CREATE TABLE `prestamo` (
-  `id_prestamo` int(11) NOT NULL,
-  `nombre_ambiente` varchar(50) NOT NULL,
+  `id_prestamo` int NOT NULL,
+  `nombre_ambiente` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `fecha_prestamo` date NOT NULL,
   `fecha_entrega` date NOT NULL,
-  `nombre_celador` varchar(50) DEFAULT NULL,
-  `observaciones` text DEFAULT NULL,
-  `fk_usuario` int(11) NOT NULL,
-  `fk_ambiente` int(11) NOT NULL
+  `nombre_celador` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `observaciones` text COLLATE utf8mb4_general_ci,
+  `fk_usuario` int NOT NULL,
+  `fk_ambiente` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -137,14 +137,14 @@ INSERT INTO `prestamo` (`id_prestamo`, `nombre_ambiente`, `fecha_prestamo`, `fec
 --
 
 CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `identificacion` int(11) NOT NULL,
-  `telefono` varchar(50) NOT NULL,
-  `correo` varchar(50) NOT NULL,
-  `contraseña` varchar(50) NOT NULL,
-  `tipo_usuario` enum('celador','administrador','instructor') NOT NULL,
-  `estado_usuario` enum('activo','inactivo') NOT NULL
+  `id_usuario` int NOT NULL,
+  `nombre` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `identificacion` int NOT NULL,
+  `telefono` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `correo` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `contraseña` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `tipo_usuario` enum('celador','administrador','instructor') COLLATE utf8mb4_general_ci NOT NULL,
+  `estado_usuario` enum('activo','inactivo') COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -152,7 +152,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `identificacion`, `telefono`, `correo`, `contraseña`, `tipo_usuario`, `estado_usuario`) VALUES
-(1, 'julian', 1117486332, '321412312123', 'julian@gmail.com', '123', 'celador', 'activo');
+(1, 'julian', 1117486332, '321412312123', 'julian@gmail.com', '123', 'celador', 'activo'),
+(2, 'David Ricardo', 1231231231, '3333333333', 'drpg@gmail.com', '123', 'celador', 'activo'),
+(4, 'David Ricardo 4', 1231231, '3333333333', 'drpg1@gmail.com', '123', 'celador', 'activo'),
+(6, 'David Ricardo 5', 1231231999, '3333333333', 'drpg1008@gmail.com', '12345678', 'celador', 'activo'),
+(7, 'David Ricardo 6', 1004083441, '3333333333', 'drpg1004@gmail.com', '12345678', 'celador', 'activo');
 
 --
 -- Índices para tablas volcadas
@@ -197,7 +201,9 @@ ALTER TABLE `prestamo`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `correo` (`correo`),
+  ADD UNIQUE KEY `identificacion` (`identificacion`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -207,37 +213,37 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `ambientes`
 --
 ALTER TABLE `ambientes`
-  MODIFY `id_ambiente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ambiente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `areas`
 --
 ALTER TABLE `areas`
-  MODIFY `id_area` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_area` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `elementos`
 --
 ALTER TABLE `elementos`
-  MODIFY `id_elementos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_elementos` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `novedad`
 --
 ALTER TABLE `novedad`
-  MODIFY `id_novedad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_novedad` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamo`
 --
 ALTER TABLE `prestamo`
-  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_prestamo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

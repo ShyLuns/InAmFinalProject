@@ -1,5 +1,6 @@
 import { pool } from '../database/conexion.js';
 import jwt from 'jsonwebtoken';
+import { validationResult } from 'express-validator';
 
 //para listar los usuarios
 
@@ -47,9 +48,30 @@ export const obtenerUsuarioPorId = async (req, res) => {
 
 // Crear un nuevo usuario
 export const crearUsuario = async (req, res) => {
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    
+
     const nuevoUsuario = req.body;
   
     try {
+
+        const [usuarios] = await pool.query('SELECT * FROM usuario WHERE correo = ?', [nuevoUsuario.correo]);
+        if (usuarios.length > 0) {
+            return res.status(400).json({ mensaje: 'El correo electrónico ya está registrado' });
+        }
+
+        const [usuariosIdentificacion] = await pool.query('SELECT * FROM usuario WHERE identificacion = ?', [nuevoUsuario.identificacion]);
+        if (usuariosIdentificacion.length > 0) {
+            return res.status(400).json({ mensaje: 'La identificación ya está registrada' });
+        }
+
+        const estadoUsuario = nuevoUsuario.estado_usuario || 'activo';
+
       const query = `
         INSERT INTO usuario 
         (tipo_usuario, nombre, correo, telefono, identificacion, contraseña, estado_usuario) 
